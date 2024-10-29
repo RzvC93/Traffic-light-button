@@ -1,0 +1,15 @@
+cd calea-catre-proiectul-tau
+
+git init
+
+
+git add .
+
+
+git commit -m "Primul commit"
+
+
+git remote add origin https://github.com/RzvC93/Buton-semafor.git
+
+git push -u origin master
+
