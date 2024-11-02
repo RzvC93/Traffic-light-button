@@ -1,16 +1,16 @@
-function changeBtnColor() {
-    const selectedBtn = document.getElementById("btn");
-    const colours = ["btn-warning", "btn-success", "btn-danger"];
-    let clickCount = 0;
+const selectedBtn = document.getElementById("btn");
+const colours = ["btn-warning", "btn-success", "btn-danger"];
+let clickCount = 0;
+const INTERVAL_MS = 10000;
 
-    function updateBtnColor() {
-        selectedBtn.classList.remove(...colours);
-        selectedBtn.classList.add(colours[clickCount]);
-        clickCount = (clickCount + 1) % colours.length;
-        console.log("test");
-    }
-    selectedBtn.addEventListener("click", updateBtnColor);
-    setInterval(updateBtnColor, 10000);
-    console.log("test interval");
+function changeTrafficLightColor() {
+    selectedBtn.classList.remove(...colours);
+    selectedBtn.classList.add(colours[clickCount]);
+    clickCount = (clickCount + 1) % colours.length;
 }
-changeBtnColor();
+
+function startTrafficLightCycle() {
+    setInterval(changeTrafficLightColor, INTERVAL_MS);
+}
+
+startTrafficLightCycle();
